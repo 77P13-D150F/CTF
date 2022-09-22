@@ -1,4 +1,6 @@
 #!/usr/bin/bash
 
-flag=$(echo 0x70 | xxd -r -p)
+#flag=$(echo "\x70" | xxd -r -p)
+flag=$(echo -e "\x70")
+
 echo "picoCTF{$flag}"
