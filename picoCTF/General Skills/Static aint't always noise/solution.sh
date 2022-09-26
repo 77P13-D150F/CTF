@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 
-chmod +x static
+#chmod +x static
 chmod +x ltdis.sh
 
 ltdis.sh static
