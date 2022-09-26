@@ -21,7 +21,7 @@ flag_enc = chr(0x15) + chr(0x07) + chr(0x08) + chr(0x06) + chr(0x27) + chr(0x21)
 flag = str_xor(flag_enc, 'enkidu')
 
 # Check that flag is not empty
-# changed assignment into compare for equality <-
+# changed assignment into equality operator
 if flag == "":
   print('String XOR encountered a problem, quitting.')
 else:
