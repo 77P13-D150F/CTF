@@ -2,3 +2,5 @@
 
 chmod +x code.py
 code.py codebook.txt
+
+exit 0
