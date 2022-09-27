@@ -19,5 +19,6 @@ for chunk in ${arr[@]}; do
                 flag+=$chunk                                  # keep the first and last parts
         fi
 done
-
 echo $flag
+
+exit 0
