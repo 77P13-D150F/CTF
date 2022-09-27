@@ -10,3 +10,5 @@ if [[ $? == 0 ]]; then
 else
   strings static | grep picoCTF
 fi
+
+exit 0
