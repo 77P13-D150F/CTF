@@ -2,4 +2,4 @@
 
 from pwntools import *
 
-server, port = 'saturn.picoctf.net', '54555'
+server, port = ('saturn.picoctf.net', '54555')
