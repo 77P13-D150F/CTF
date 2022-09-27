@@ -6,3 +6,5 @@
 flag=printf "\x70"
 
 echo "picoCTF{$flag}"
+
+exit 0
