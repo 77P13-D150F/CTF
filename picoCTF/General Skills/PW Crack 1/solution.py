@@ -2,7 +2,6 @@
 
 from operator import xor
 
-
 with open('level1.flag.txt.enc', 'rb') as file:
   flag_enc = file.read().decode()
  
