@@ -5,3 +5,4 @@ flag=$(echo "obase=10; ibase=16; 3D" | bc)
 
 echo "picoCTF{$flag}"
 
+exit 0
