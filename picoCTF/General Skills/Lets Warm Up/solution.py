@@ -5,4 +5,4 @@
 #flag = str(codecs.decode('0x70'[2:], 'hex'), 'utf-8')
 flag = chr(int('0x70', 16))
 
-print(''.join('picoCTF{', flag, '}'))
+print(''.join(['picoCTF{', flag, '}']))
