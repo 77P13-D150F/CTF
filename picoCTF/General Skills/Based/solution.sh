@@ -1,6 +1,6 @@
  #!/usr/bin/bash
  
-echo 'you catch this flag using an online ascii decoder, here an example:'
+echo 'you can use an online decoder to solve this flag.'
 echo 'https://www.dcode.fr/ascii-code'
 
 nc jupiter.challenges.picoctf.org 29956
