@@ -4,6 +4,9 @@
 from Crypto.Util.number import inverse, long_to_bytes
 #from Cryptodome.Util.number import inverse, long_to_bytes
 
+#pip install factordb-pycli
+
+
 from primefac import primegen
 from math import sqrt
 
@@ -22,8 +25,9 @@ e = enc[3][3:]
 
 # If the modulo n is too small, it can be factorzed to obtain the primes p and q.
 # Time of processing can be very long on low end computers. Any online factorization calculator would also work (few minutes at least).
+# You can use factordb module to screen through existing factorizations.
 
-# Here a simple method to sieve through all odd number from square root of n and below, and attempt to decrypt for all factoring pairs.
+# Here another simple method to sieve through all odd number from square root of n and below, and attempt to decrypt for all factoring pairs.
 p = sqrt(n)
 while p > 1:
     if n % p == 0:
