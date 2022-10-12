@@ -1,14 +1,12 @@
 #!/usr/bin/env python3
 
 # pip install pycryptodome
-from Crypto.Util.number import inverse, long_to_bytes
-#from Cryptodome.Util.number import inverse, long_to_bytes
+#from Crypto.Util.number import inverse, long_to_bytes
+from Cryptodome.Util.number import inverse, long_to_bytes
 
 #pip install factordb-pycli
+from factordb.factordb import FactorDB
 
-
-from primefac import primegen
-from math import sqrt
 
 def decrypt(p, q):
     phi = (p - 1) * (q - 1)
@@ -16,25 +14,44 @@ def decrypt(p, q):
     m = pow(c, d, n)
     print(long_to_bytes(m))
 
-with open('values', 'r') as file:
-  enc = file.read().split('\n')
+# If the modulo n is too small, it can be factorzed to obtain the primes p and q. This process is still long for standard computers. 
+# Any online factorization calculator would work (few minutes at least), but the fastest way is to look up at factordb.
+# Factordb is a database of known factotizations of any number. 
+def lookup(n):
+    f = FactorDB(n)
+    f.connect()
+    return f.get_factor_list()
 
-c = enc[1][3:]
-n = enc[2][3:]
-e = enc[3][3:]
+def main():
+    with open('values', 'r') as file:
+      enc = file.read().split('\n')
 
-# If the modulo n is too small, it can be factorzed to obtain the primes p and q.
-# Time of processing can be very long on low end computers. Any online factorization calculator would also work (few minutes at least).
-# You can use factordb module to screen through existing factorizations.
+    c = enc[1][3:]
+    n = enc[2][3:]
+    e = enc[3][3:]
+    
+    (p, q) = lookup(n)
+    decrypt((p, q))
 
-# Here another simple method to sieve through all odd number from square root of n and below, and attempt to decrypt for all factoring pairs.
-p = sqrt(n)
-while p > 1:
-    if n % p == 0:
-        decrypt(p, n//p)
-    p -= 2
+main()
+    
+"""
+# You can still attempt to factorize with your computer, using primefac module (from primefac import *), there are several sieves and can be executed in parallel.
+# Alterantive, here a simple and rough method to sieve through all odd number from square root of n and below.
+from math import sqrt
 
-# Here another example sieving through primes up till square root of n, with primes generated using primefac module
-for p in primegen(sqrt(n)):
-    if n % p == 0:
-        decrypt(p, n/p)
+def quick_and_dirty(n):
+    p = sqrt(n)
+    while p > 1:
+        if n % p == 0:
+            yield(p, n//p)
+        p -= 2
+
+# Here another rough sieve of primes up till square root of n.
+from primefac import primegen
+
+def linear_search(n):
+    for p in primegen(sqrt(n)):
+        if n % p == 0:
+            yield(p, n//p)
+"""
