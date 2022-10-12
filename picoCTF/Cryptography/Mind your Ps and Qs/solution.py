@@ -14,7 +14,7 @@ def decrypt(p, q):
     m = pow(c, d, n)
     print(long_to_bytes(m))
 
-# If the modulo n is too small, it can be factorzed to obtain the primes p and q. This process is still long for standard computers. 
+# If the modulo n is too small, it can be factored to obtain the primes p and q. This process is still long for standard computers. 
 # Any online factorization calculator would work (few minutes at least), but the fastest way is to look up at factordb.
 # Factordb is a database of known factotizations of any number. 
 def lookup(n):
