@@ -2,4 +2,7 @@
 
 import socket
 
-server, port = ('mercury.picoctf.net', 58913)
+server = ('mercury.picoctf.net', 58913)
+
+with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
+        s.connect(server)
