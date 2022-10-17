@@ -30,7 +30,7 @@ def main():
     n = enc[2][3:]
     e = enc[3][3:]
     
-    p, q = lookup(n)[0]
+    p, q = lookup(n)
     decrypt(p, q)
 
 main()
@@ -46,12 +46,4 @@ def quick_and_dirty(n):
         if n % p == 0:
             yield(p, n//p)
         p -= 2
-
-# Here another rough sieve of primes up till square root of n.
-from primefac import primegen
-
-def linear_search(n):
-    for p in primegen(sqrt(n)):
-        if n % p == 0:
-            yield(p, n//p)
 """
