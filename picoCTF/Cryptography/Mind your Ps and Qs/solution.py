@@ -30,8 +30,8 @@ def main():
     n = enc[2][3:]
     e = enc[3][3:]
     
-    (p, q) = lookup(n)
-    decrypt((p, q))
+    p, q = lookup(n)[0]
+    decrypt(p, q)
 
 main()
     
