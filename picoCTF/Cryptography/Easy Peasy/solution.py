@@ -3,6 +3,7 @@
 import socket
 from operator import xor
 
+# Recycling through the same key for multiple messages could lead to decryption.
 # the total length of the key is known from the otp.py
 KEY_LENGTH = 50000                              
 server = ('mercury.picoctf.net', 58913)
