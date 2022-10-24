@@ -12,7 +12,7 @@ def decrypt(p, q, c, e, n):
     phi = (p - 1) * (q - 1)
     d = inverse(e, phi)
     m = pow(c, d, n)
-    print(long_to_bytes(m))   # euivalent to: print(bytes.fromhex(hex(m)[2:]))
+    print(long_to_bytes(m))   # equivalent to: print(bytes.fromhex(hex(m)[2:]))
 
 # If the modulo n is too small, it can be factored to obtain the primes p and q. This process is still long for standard computers. 
 # Any online factorization calculator would work (few minutes at least), but the fastest way is to look up at factordb.
