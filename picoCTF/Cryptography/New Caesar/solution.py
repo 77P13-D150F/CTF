@@ -13,7 +13,7 @@ def reverse_shift(c, k):
 
 
 def b16_decode(enc):
-    return ''.join([chr(int('{0:04b}'.format(ALPHABET.index(enc[i])) + '{0:04b}'.format(ALPHABET.index(enc[i+1])), 2))     for i in range(0, len(enc)-1, 2)])
+    return ''.join([chr(int('{0:04b}'.format(ALPHABET.index(enc[i])) + '{0:04b}'.format(ALPHABET.index(enc[i+1])), 2)) for i in range(0, len(enc)-1, 2)])
 
 
 def brute_force_single_character_key(c):
