@@ -15,7 +15,7 @@ c = int(enc_flag[3][enc_flag[3].index(':')+2:])
 
 
 # The plaintext is padded so that (m ** e) is just barely larger than n.
-# If pow(m, e) % n = c, then pow(m, e) = pad * n + c, for some pad so that m is a true root of (pad * n + c, e).
+# If pow(m, e) % n = c, then pow(m, e) = pad * n + c, for some pad so that m is a true root of pow(pad * n + c, e).
 
 for pad in range(MAX_PAD):
     print(f'\rPadding {pad} of {MAX_PAD}', end='\r', flush=True)
