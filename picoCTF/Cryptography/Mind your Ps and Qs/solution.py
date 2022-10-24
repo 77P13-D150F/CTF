@@ -8,7 +8,7 @@ from Cryptodome.Util.number import inverse, long_to_bytes
 from factordb.factordb import FactorDB
 
 
-def decrypt(p, q):
+def decrypt(p, q, c, e, n):
     phi = (p - 1) * (q - 1)
     d = inverse(e, phi)
     m = pow(c, d, n)
@@ -31,7 +31,7 @@ def main():
     e = enc[3][3:]
     
     p, q = lookup(n)
-    decrypt(p, q)
+    decrypt(p, q, c, e, n)
 
 main()
     
