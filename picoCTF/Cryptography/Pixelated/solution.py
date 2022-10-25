@@ -4,8 +4,8 @@
 
 from PIL import Image
 
-png1 = Image.open(r'C:\Users\RDOrsiEl\Downloads\scrambled1.png')
-png2 = Image.open(r'C:\Users\RDOrsiEl\Downloads\scrambled2.png')
+png1 = Image.open('scrambled1.png')
+png2 = Image.open('scrambled2.png')
 flag = Image.new(png1.mode, png1.size)
 
 W, H = png1.size
