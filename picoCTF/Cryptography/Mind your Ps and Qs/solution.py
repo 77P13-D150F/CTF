@@ -1,8 +1,7 @@
 #!/usr/bin/env python3
 
 # pip install pycryptodome
-#from Crypto.Util.number import inverse, long_to_bytes
-from Cryptodome.Util.number import inverse, long_to_bytes
+from Crypto.Util.number import inverse, long_to_bytes
 
 #pip install factordb-pycli
 from factordb.factordb import FactorDB
