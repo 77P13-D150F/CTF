@@ -22,6 +22,6 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
         m1 = int(s.recv(1024)[13:])
         
         # Now m1 = pow(c1, d, n),
-        # but as there is no padding in the encryption it is also true that m1 = (k * m) % n
-        m = (m1 // k) % n
+        # but as there is no padding in the encryption it is also true that m1 = k * m, so m = m1 / k
+        m = m1 // k
         print(long_to_bytes(m))
