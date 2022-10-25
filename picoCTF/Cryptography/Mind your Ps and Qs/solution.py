@@ -35,7 +35,7 @@ def main():
 main()
     
 """
-# You can still attempt to factorize with your computer, using primefac module (from primefac import *), there are several sieves and can be executed in parallel.
+# You can still attempt to factorize with your computer, using primefac module.
 # Alterantive, here a simple and rough method to sieve through all odd number from square root of n and below.
 from math import sqrt
 
