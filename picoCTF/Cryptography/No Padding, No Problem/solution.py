@@ -13,7 +13,7 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
         e = int(data[5][3:])
         c = int(data[6][12:])
 
-        # In RSA is homomorphic, so is possible to append a new plaintext k to the ciphertext c,
+        # RSA is homomorphic, so it is possible to append a new plaintext k to the ciphertext c,
         # so to obtain an new ciphertext c1, by applying the formula c1 = c * pow(k, e, n)
         # Let's chose a simple value of k (e.g. k = 2) and submit c1 to the oracle for decryption.
         k = 2
