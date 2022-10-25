@@ -4,7 +4,7 @@ from Crypto.Util.number import long_to_bytes
 import gmpy2
 
 
-with open(r'H:\04_Python\ciphertext', 'r') as file:
+with open('ciphertext', 'r') as file:
     enc_flag = file.read().split('\n')
 
 n = int(enc_flag[0][enc_flag[0].index(':')+2:])
