@@ -20,4 +20,13 @@ def encrypt(rot, text):
     return cipher.translate(rot_tab)
 
 
-print(encrypt(13, enc_flag))
+def main():
+    with open('ciphertext', 'r') as file:
+        enc_flag = file.read()
+        
+    for i in range(26):
+        flag = encrypt(i, enc_flag)
+        if 'pico' in flag:
+            print(flag)
+
+main()
