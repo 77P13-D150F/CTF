@@ -27,7 +27,6 @@ def caesar(rot, text):
 
 
 def main():
-       
         with tarfile.open('leak.tar') as tar:
                 tar.extractall()
 
