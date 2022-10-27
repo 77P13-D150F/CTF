@@ -22,7 +22,7 @@ def main():
                 msg = decrypt_string(enc_msg, m)
                 s.sendall(''.join([msg, '\n']).encode())
                 print(s.recv(1024))
-                # Not in standard format, paste as such
+                # Flag not in standard format, paste as such
                 
                 
 # This funciton is copied from the playfair.py file, it generates the playfair square table
