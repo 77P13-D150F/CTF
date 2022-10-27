@@ -38,6 +38,7 @@ def generate_square(alphabet):
         return matrix
 
 
+# This funciton is copied from the playfair.py file, it generates the playfair square table
 def get_index(letter, matrix):
         for row in range(SQUARE_SIZE):
                 for col in range(SQUARE_SIZE):
