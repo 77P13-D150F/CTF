@@ -5,6 +5,27 @@ import socket
 
 SQUARE_SIZE = 6
 
+# This challenge requires to decrypt a Playfair cipher.
+# Here below a set of functions obtained from the file playfair.py to generate a playfair square table.
+# I also modified the other functions from the file playfair.py to decrypt rather than encrypt, reversing the process.
+
+def main():
+        server = ('mercury.picoctf.net', 19354)
+        with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
+                s.connect(server)
+                data = s.recv(1024).decode().split('\n')
+                alphabet = data[0][22:]
+                enc_msg = data[1][31:]
+                s.recv(1024)
+
+                m = generate_square(alphabet)
+                msg = decrypt_string(enc_msg, m)
+                s.sendall(''.join([msg, '\n']).encode())
+                print(s.recv(1024))
+                # Not in standard format, paste as such
+                
+                
+# This funciton is copied from the playfair.py file, it generates the playfair square table
 def generate_square(alphabet):
         assert len(alphabet) == pow(SQUARE_SIZE, 2)
         matrix = []
@@ -42,22 +63,6 @@ def decrypt_string(c, matrix):
         for i in range(0, len(c), 2):
                 m += decrypt_pairs(c[i:i + 2], matrix)
         return m
-
-
-def main():
-        server = ('mercury.picoctf.net', 19354)
-        with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
-                s.connect(server)
-                data = s.recv(1024).decode().split('\n')
-                alphabet = data[0][22:]
-                enc_msg = data[1][31:]
-                s.recv(1024)
-
-                m = generate_square(alphabet)
-                msg = decrypt_string(enc_msg, m)
-                s.sendall(''.join([msg, '\n']).encode())
-                print(s.recv(1024))
-                # Not in standard format, paste as such
 
 
 main()
