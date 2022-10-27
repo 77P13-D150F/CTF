@@ -48,6 +48,7 @@ def get_index(letter, matrix):
         exit()
 
 
+# Reversing the Playfair encryption process
 def decrypt_pairs(pair, matrix):
         p1 = get_index(pair[0], matrix)
         p2 = get_index(pair[1], matrix)
@@ -58,7 +59,8 @@ def decrypt_pairs(pair, matrix):
         else:
                 return matrix[p1[0]][p2[1]] + matrix[p2[0]][p1[1]]
 
-
+        
+# Reversing the Playfair encryption process
 def decrypt_string(c, matrix):
         m = ''
         for i in range(0, len(c), 2):
