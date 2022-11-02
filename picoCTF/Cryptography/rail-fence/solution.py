@@ -7,7 +7,8 @@ with open('message.txt', 'r') as file:
         enc_flag = file.read()
 
     
-# The flag is encrypted using a railfence cipher of 4 rails. First I described the encrypted flag:
+# The flag is encrypted using a railfence cipher of 4 rails (https://en.wikipedia.org/wiki/Rail_fence_cipher).
+# First I described the encrypted flag:
 L = len(enc_flag)
 N = 4
 x = 0
