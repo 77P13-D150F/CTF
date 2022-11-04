@@ -4,9 +4,6 @@
 # The challenge title implies an encryption by Vigenere cipher.
 # We also know that the flag is encrypted using the key "CYLAB".
 
-import string
-
-
 with open('cipher.txt', 'r') as file:
     enc_flag = file.read()
 
