@@ -25,39 +25,3 @@ for i in range(len(msg)):
 
 print(flag)
 
-
-
-# This challenge can also be solved manually, assuming the first part of the last line translates:
-# 'Pmj tuec xg: fxslSPT'
-# 'The flag is: picoCTF'
-
-# Then the rest of the alphabet can be rebuilt iterating through the text, 
-# changing the values to the az dictionary keys here below.
-
-#az['a'] = 'q'
-#az['b'] = 'r'
-#az['c'] = 'g'
-#az['d'] = 'm'
-#az['e'] = 'a'
-#az['f'] = 'p'
-#az['g'] = 's'
-#az['h'] = 'u'
-#az['i'] = 'y'
-#az['j'] = 'e'
-#az['k'] = 'b'
-#az['l'] = 'o'
-#az['m'] = 'h'
-#az['n'] = 'v'
-#az['o'] = 'j'
-#az['p'] = 't'
-#az['q'] = 'k'
-#az['r'] = 'w'
-#az['s'] = 'c'
-#az['t'] = 'f'
-#az['u'] = 'l'
-#az['v'] = 'x'
-#az['w'] = 'z'
-#az['x'] = 'i'
-#az['y'] = 'n'
-#az['z'] = 'd'
-
