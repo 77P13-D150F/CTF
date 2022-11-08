@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
-# Open the audio file with audacity. by zooming and changing the view to spectrum, the morse code elements are visible.
-# The challenge says that all the transcribed letter are in lower case and the pauses are replaced by underscore '_'.
+# Open the audio file with audacity. By zooming and changing the view to spectrum, the morse code elements become well visible.
+# The challenge says that all the translated letters are lower case, and the pauses are replaced by underscores '_'.
 
 code = """
 . _ _
